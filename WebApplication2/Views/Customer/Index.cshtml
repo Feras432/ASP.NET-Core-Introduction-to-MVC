@@ -1,7 +1,24 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    ViewData["Title"] = "Customer Page";
-    string[] Customers = {"Fahad", "Fawaz", "Faisal"};
-}
+﻿@model List<Customer>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Civil Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+<tbody>
+        @foreach (var e in Model)
+        {
+      <tr>
+        <th>@e.CivilId</th>
+        <th>@e.Name</th>
+        <th>@e.Email</th>
+        <th>@e.Phone</th>
+      </tr>
+        }
+  </tbody>
+</table>   
