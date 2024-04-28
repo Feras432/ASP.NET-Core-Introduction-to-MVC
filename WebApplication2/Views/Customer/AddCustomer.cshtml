@@ -1,5 +1,28 @@
-﻿@*
+﻿﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
+@model Customer
+@using (Html.BeginForm("AddCustomer", "Customer", FormMethod.Post))
+{
+    @Html.LabelFor(c => c.CivilId)
+    <br />
+    @Html.EditorFor(customer => customer.CivilId)
+    @Html.ValidationMessageFor(c => c.CivilId)
+    <br />
+    @Html.LabelFor(c => c.Name)
+    <br />
+    @Html.EditorFor(customer => customer.Name)
+    @Html.ValidationMessageFor(c => c.Name)
+    <br />
+    @Html.LabelFor(customer => customer.Email)
+    <br />
+    @Html.EditorFor(customer => customer.Email)
+    @Html.ValidationMessageFor(c => c.Email)
+    <br />
+    @Html.LabelFor(customer => customer.Phone)
+    <br />
+    @Html.EditorFor(customer => customer.Phone)
+    @Html.ValidationMessageFor(c => c.Phone)
+    <br />
+    <button class="btn btn-primary" type="submit">save</button>
 }
